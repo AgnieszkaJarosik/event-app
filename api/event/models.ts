@@ -28,8 +28,8 @@ export const eventSchema: Schema = new Schema({
 });
 
 export const eventFormSchema = yup.object({
-  firstName: yup.string().required(),
-  lastName: yup.string().required(),
+  firstName: yup.string().min(2).max(30).required(),
+  lastName: yup.string().min(2).max(30).required(),
   email: yup.string().email().required(),
   eventDate: yup.string().required(),
 })

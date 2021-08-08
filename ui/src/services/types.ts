@@ -3,9 +3,12 @@ export interface Event {
   lastName: string;
   email: string;
   eventDate: string;
+  _id: string;
 };
 
 export type ListResp = {
-  events: Event[];
-  totalRecords: number;
+  data: {
+    events: Event[];
+    totalRecords: number;
+  }
 }

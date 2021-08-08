@@ -1,5 +1,7 @@
 import request from 'supertest';
-import app from "./index";
+import app, { server } from "./index";
+import mongoose from "mongoose";
+import { dropAllCollections } from "./test-setup";
 
 describe("POST /event", () => {
   test("should respond with a 201 status code", async () => {
@@ -13,7 +15,7 @@ describe("POST /event", () => {
     expect(resp.statusCode).toBe(201);
   })
 
-  test("email walidation works", async () => {
+  test("should validate email", async () => {
     const data = {
       firstName: "John",
       lastName: "Doe",
@@ -22,10 +24,10 @@ describe("POST /event", () => {
     };
     const response = await request(app).post("/event").send(data)    
     expect(response.statusCode).toBe(400);
-    expect(response.text).toBe("email must be a valid email")
+    expect(response.text).toBe(JSON.stringify({ type: "email", message: "email must be a valid email" }))
   })
 
-  test("response has event object", async () => {
+  test("response body should contain event object", async () => {
     const data = {
       firstName: "John",
       lastName: "Doe",
@@ -49,4 +51,10 @@ describe("POST /event", () => {
       const response = await request(app).post("/event").send(data)
       expect(response.statusCode).toBe(400)
   })
+
+  afterAll(async () => {
+    dropAllCollections();
+    mongoose.disconnect();
+    server.close();
+  });
 })

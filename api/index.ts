@@ -22,8 +22,6 @@ if (env === "development") {
 } else {
   port = "8080";
 }
-console.log('port, db', port, DB_URI);
-
 
 function run() {
   if (!DB_URI) {
@@ -44,7 +42,7 @@ function run() {
 
 run();
 
-app.listen(port, () => {
+export const server = app.listen(port, () => {
   console.log(`[server]: Server is running at port: ${port}`);
 });
 

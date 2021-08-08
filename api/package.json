@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --detectOpenHandles --NODE_ENV=test",
-    "start": "nodemon index.ts --NODE_ENV=development"
+    "start": "nodemon index.ts --NODE_ENV=development",
+    "test": "jest --NODE_ENV=test"
   },
   "keywords": [],
   "author": "",

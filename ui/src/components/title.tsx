@@ -1,7 +1,7 @@
 import React from "react";
 
 type Props = {
-	variant: "large" | "standard" | "dense";
+	variant?: "large" | "standard" | "dense";
 };
 
 const marginClass = {
@@ -10,7 +10,7 @@ const marginClass = {
 	dense: "mb-1",
 };
 
-const Title: React.FC<Props> = ({ variant, children }) => {
+const Title: React.FC<Props> = ({ variant = "standard", children }) => {
 	return <div className={marginClass[variant]}>{children}</div>;
 };
 

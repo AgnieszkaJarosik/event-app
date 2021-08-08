@@ -9,11 +9,9 @@ function App() {
 	return (
 		<Router>
 			<Switch>
-				<div>
-					<Route path="/events" exact={true} component={EventList} />
-					<Route path="/form" component={Form} />
-					<Redirect to="/events" />
-				</div>
+				<Route path="/events" exact={true} component={EventList} />
+				<Route path="/form" component={Form} />
+				<Redirect to="/events" />
 			</Switch>
 		</Router>
 	);

@@ -1,46 +1,59 @@
-# Getting Started with Create React App
+# Event App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is simple app with frontend implemented in
+React and connected with a simple API written in Node.js with data saved in MongoDB.
 
-## Available Scripts
+## UI
 
-In the project directory, you can run:
+### Installation
 
-### `npm start`
+In ./ui run:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### `npm install`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Scripts
 
-### `npm test`
+To start frontend in ./ui run:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### `npm start`
 
-### `npm run build`
+To run tests in ./ui run:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### `npm test`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## API
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+In order to use this api you need running MongoDB.
 
-### `npm run eject`
+### Start a MongoDB Server
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+For complete MongoDB installation instructions, see [the manual](https://docs.mongodb.com/manual/installation/).
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Download the right MongoDB version from [MongoDB](https://www.mongodb.com/try)
+1. Create a database directory (in this case under /data).
+1. Install and start a mongod process.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### `mongod --dbpath=/data`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+You should see the mongod process start up and print some status information.
 
-## Learn More
+### Connect to MongoDB
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To connect api with databases you need to provide proper environment variables.
+Firstly, in `./api` directory create `.env` file. You can use `.env.example` file as a template.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Installation
+
+In ./api run:
+
+#### `npm install`
+
+### Scripts
+
+To start frontend in ./api run:
+
+#### `npm start`
+
+To run tests in ./api run:
+
+#### `npm test`
