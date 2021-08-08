@@ -23,23 +23,21 @@ To run tests in ./ui run:
 
 ## API
 
-In order to use this api you need running MongoDB.
+To use this api you need to run MongoDB on your local machine.
 
 ### Start a MongoDB Server
 
 For complete MongoDB installation instructions, see [the manual](https://docs.mongodb.com/manual/installation/).
 
 1. Download the right MongoDB version from [MongoDB](https://www.mongodb.com/try)
-1. Create a database directory (in this case under /data).
+1. Create a database directory.
 1. Install and start a mongod process.
-
-#### `mongod --dbpath=/data`
 
 You should see the mongod process start up and print some status information.
 
 ### Connect to MongoDB
 
-To connect api with databases you need to provide proper environment variables.
+In order to connect api to the database you need to provide the appropriate environment variables.
 Firstly, in `./api` directory create `.env` file. You can use `.env.example` file as a template.
 
 ### Installation
